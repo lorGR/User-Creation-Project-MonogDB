@@ -1,0 +1,217 @@
+:root {
+  --bg-color: #525461;
+  --bg-color-card: #0b0c11;
+  --bg-color-input: #323645;
+  --bg-color-input-focused: #3D404A;
+  --border-color-input-focuesed: #235587;
+  --blue-primary-color: #228CE9;
+  --gray-primary-color: #747C8C;
+  --light-blue-primary-color: #3a97e9;
+  --swatch1: #0b0c11;
+  --swatch2: #1b2a4a;
+  --swatch3: #595b63;
+  --swatch4: #0449e9;
+  --swatch5: #ededee;
+  --swatch6: #9c9da2;
+  --swatch7: #1a429c;
+  --swatch8: #5195ea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+
+body {
+  color: var(--gray-primary-color);
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+}
+body #cardHolder {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  background-color: var(--bg-color-card);
+  border-radius: 1.5em;
+}
+body #cardHolder #contentHolder {
+  width: 100%;
+  padding: 3em;
+}
+body #cardHolder #contentHolder header {
+  display: flex;
+  align-items: center;
+}
+body #cardHolder #contentHolder header nav {
+  width: 100%;
+}
+body #cardHolder #contentHolder header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+body #cardHolder #contentHolder header nav ul li {
+  cursor: pointer;
+}
+body #cardHolder #contentHolder header nav ul li a {
+  text-decoration: none;
+  color: var(--gray-primary-color);
+}
+body #cardHolder #contentHolder header nav ul .active {
+  border-bottom: 2px solid #bcbcbd;
+}
+body #cardHolder #contentHolder header nav ul .active a {
+  color: #bcbcbd;
+}
+body #cardHolder #contentHolder header nav ul #logo h3 {
+  color: #ffffff;
+}
+body #cardHolder #contentHolder header::before {
+  content: "";
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: var(--blue-primary-color);
+  border-radius: 50%;
+  transform: translate(0%, 0%);
+  margin-right: 0.5em;
+}
+body #cardHolder #contentHolder #userStart {
+  margin-top: 8em;
+}
+body #cardHolder #contentHolder #userStart #userStartTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+body #cardHolder #contentHolder #userStart p {
+  margin: 1em 0;
+}
+body #cardHolder #contentHolder #userStart p a {
+  color: var(--blue-primary-color);
+  text-decoration: none;
+}
+body #cardHolder #contentHolder #userStart p a:hover {
+  color: var(--light-blue-primary-color);
+}
+body #cardHolder #contentHolder #userStart h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+body #cardHolder #contentHolder #userStart h1::after {
+  content: "";
+  display: inline-block;
+  width: 0.35em;
+  height: 0.35em;
+  background-color: var(--blue-primary-color);
+  border-radius: 50%;
+  transform: translate(20%, 20%);
+}
+body #cardHolder #contentHolder #userForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+body #cardHolder #contentHolder #userForm form .first-last-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+body #cardHolder #contentHolder #userForm form .input-holder {
+  position: relative;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-input);
+  border: 2px solid var(--bg-color-input);
+  outline-offset: 2px;
+  border-radius: 0.5em;
+  padding: 0.65em;
+  gap: 0.5em;
+}
+body #cardHolder #contentHolder #userForm form .input-holder input {
+  font-weight: 700;
+  color: #ffffff;
+  border: none;
+  background-color: var(--bg-color-input);
+}
+body #cardHolder #contentHolder #userForm form .input-holder * input[type=password] {
+  width: 85%;
+}
+body #cardHolder #contentHolder #userForm form .input-holder input:focus {
+  outline: none;
+  background-color: inherit;
+}
+body #cardHolder #contentHolder #userForm form .input-holder label {
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+body #cardHolder #contentHolder #userForm form .input-holder .visibleEye {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  width: fit-content;
+  position: absolute;
+  left: 91.25%;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+body #cardHolder #contentHolder #userForm form .input-holder .visibleEye img {
+  width: 2.4em;
+}
+body #cardHolder #contentHolder #userForm form .input-holder .userIdIcon {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  position: absolute;
+  width: 2em;
+  left: 82.5%;
+}
+body #cardHolder #contentHolder #userForm form .input-holder .emailIcon {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  position: absolute;
+  width: 1.75em;
+  left: 92%;
+}
+body #cardHolder #contentHolder #userForm form .input-holder:focus-within {
+  box-sizing: border-box;
+  color: var(--blue-primary-color);
+  background-color: var(--bg-color-input-focused);
+  border: 2px solid var(--border-color-input-focuesed);
+}
+body #cardHolder #contentHolder #userForm form #submitRegister {
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: var(--blue-primary-color);
+  border-radius: 2em;
+  padding: 0.75em;
+  transition: background-color 0.25s ease-in-out;
+}
+body #cardHolder #contentHolder #userForm form #submitRegister:hover {
+  cursor: pointer;
+  background-color: var(--light-blue-primary-color);
+}
+body #cardHolder #imgHolder {
+  width: 100%;
+}
+body #cardHolder #imgHolder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
