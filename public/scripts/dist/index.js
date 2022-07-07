@@ -45,3 +45,11 @@ function handleVisibleRePass(event) {
         console.error(error);
     }
 }
+function handleHomePage(event) {
+    try {
+        window.location.href = "../views/home.html";
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
