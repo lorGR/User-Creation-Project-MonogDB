@@ -1,18 +1,18 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./styles/dist/index.css">
-    <title>Save The World - Register</title>
+    <link rel="stylesheet" href="./styles/dist/home.css">
 </head>
-
 <body>
     <main id="cardHolder">
         <aside id="contentHolder">
@@ -20,54 +20,28 @@
                 <nav>
                     <ul>
                         <li id="logo"><h3>Save The World</h3></li>
-                        <li><a onclick="handleHomePage()">Home</a></li>
-                        <li class="active"><a>Join</a></li>
+                        <li class="active"><a onclick="handleHomePage()">Home</a></li>
+                        <li><a onclick="handleJoinPage()">Join</a></li>
                     </ul>
                 </nav>
             </header>
-            <section id="userStart">
-                <p id="userStartTitle">START FOR FREE</p>
-                <h1>Create new account</h1>
-                <p>Already A Member? <a href="">Log in</a></p>
-            </section>
-            <section id="userForm">
-                <form autocomplete="off">
-                    <div class="first-last-name">
-                        <div class="input-holder">
-                            <label for="firstName">First name</label>
-                            <input type="text" id="firstName">
-                            <img class="userIdIcon" src="./assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
-                        </div>
-                        <div class="input-holder userIdIcon">
-                            <label for="lastName">Last name</label>
-                            <input type="text" id="lastName">
-                            <img class="userIdIcon" src="./assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
-                        </div>
-                    </div>
-                    <div class="input-holder emailIcon">
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-                        <img class="emailIcon" src="./assets/svgs/icons/mail-svgrepo-com.svg" alt="emailIcon">
-                    </div>
-                    <div class="input-holder">
-                        <label for="password">Password</label>
-                        <input type="password" id="password">
-                        <button class="visibleEye" onclick="handleVisiblePass(event)"><img id="passwordIcon" src="./assets/svgs/icons/eye-invisible-svgrepo-com.svg" alt="visibleEye"></button>
-                    </div>
-                    <div class="input-holder">
-                        <label for="rePassword">Repeat Password</label>
-                        <input type="password" id="rePassword">
-                        <button class="visibleEye" onclick="handleVisibleRePass(event)"><img id="rePasswordIcon" src="./assets/svgs/icons/eye-invisible-svgrepo-com.svg" alt="visibleEye"></button>
-                    </div>
-                    <button id="submitRegister" type="submit">Create account</button>
-                </form>
-            </section>
+            <div id="mainContent">
+                <h1 id="title"><span>Save</span> the <span>World</span></br> with us <span>!</span></h1>
+                <p class="subtitle">Join our community and provide your officiant to the world environment.</p>
+                <div class="points">
+                    <p>Free for everyone - <mark>  "Free Forever". </mark></p>
+                    <p>Get gifts for helping each other.</p>
+                    <p>Help and grow the community from anywhere.</p>
+                    <p>No payments methods</p>
+                    <p>Zero expirence is needed.</p>
+                </div>
+                <button onclick="handleJoinPageBtn()">Join the Community now</button>
+            </div>
         </aside>
         <aside id="imgHolder">
-            <img src="./assets/images/pictures/Trees.jpg" alt="Trees">
+            <img src="../assets/images/pictures/Trees.jpg" alt="Trees">
         </aside>
     </main>
     <script src="./scripts/dist/index.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/dist/join.css">
+    <title>Save The World - Register</title>
+</head>
+
+<body>
+    <main id="cardHolder">
+        <aside id="contentHolder">
+            <header>
+                <nav>
+                    <ul>
+                        <li id="logo"><h3>Save The World</h3></li>
+                        <li><a onclick="handleHomePage()">Home</a></li>
+                        <li class="active"><a>Join</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="userStart">
+                <p id="userStartTitle">START FOR FREE</p>
+                <h1>Create new account</h1>
+                <p>Already A Member? <a href="">Log in</a></p>
+            </section>
+            <section id="userForm">
+                <form onsubmit="handleSubmitForm(event)" autocomplete="off">
+                    <div class="first-last-name">
+                        <div class="input-holder">
+                            <label for="firstName">First name</label>
+                            <input type="text" id="firstName">
+                            <img class="userIdIcon" src="../assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
+                        </div>
+                        <div class="input-holder userIdIcon">
+                            <label for="lastName">Last name</label>
+                            <input type="text" id="lastName">
+                            <img class="userIdIcon" src="../assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
+                        </div>
+                    </div>
+                    <div class="input-holder emailIcon">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                        <img class="emailIcon" src="../assets/svgs/icons/mail-svgrepo-com.svg" alt="emailIcon">
+                    </div>
+                    <div class="input-holder">
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+                        <button class="visibleEye" onclick="handleVisiblePass(event)"><img id="passwordIcon" src="../assets/svgs/icons/eye-invisible-svgrepo-com.svg" alt="visibleEye"></button>
+                    </div>
+                    <div class="input-holder">
+                        <label for="rePassword">Repeat Password</label>
+                        <input type="password" id="rePassword">
+                        <button class="visibleEye" onclick="handleVisibleRePass(event)"><img id="rePasswordIcon" src="../assets/svgs/icons/eye-invisible-svgrepo-com.svg" alt="visibleEye"></button>
+                    </div>
+                    <button id="submitRegister" type="submit">Create account</button>
+                </form>
+            </section>
+        </aside>
+        <aside id="imgHolder">
+            <img src="../assets/images/pictures/Trees.jpg" alt="Trees">
+        </aside>
+    </main>
+    <script src="../scripts/dist/join.js"></script>
+</body>
+
+</html>

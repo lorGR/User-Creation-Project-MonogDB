@@ -89,6 +89,7 @@ body #cardHolder #contentHolder #mainContent {
   gap: 2em;
 }
 body #cardHolder #contentHolder #mainContent h1 {
+  color: #ffffff;
   font-size: 3.5rem;
 }
 body #cardHolder #contentHolder #mainContent h1 span {
