@@ -65,6 +65,10 @@ body #cardHolder #contentHolder header nav ul li {
 body #cardHolder #contentHolder header nav ul li a {
   text-decoration: none;
   color: var(--gray-primary-color);
+  transition: color 0.35s ease-in-out;
+}
+body #cardHolder #contentHolder header nav ul li a:hover {
+  color: var(--blue-primary-color);
 }
 body #cardHolder #contentHolder header nav ul .active {
   border-bottom: 2px solid var(--light-blue-primary-color);
@@ -86,8 +90,9 @@ body #cardHolder #contentHolder #mainContent {
 }
 body #cardHolder #contentHolder #mainContent h1 {
   font-size: 3.5rem;
-  text-decoration: underline;
-  text-decoration-color: var(--blue-primary-color);
+}
+body #cardHolder #contentHolder #mainContent h1 span {
+  color: var(--blue-primary-color);
 }
 body #cardHolder #contentHolder #mainContent .subtitle {
   font-weight: 700;
