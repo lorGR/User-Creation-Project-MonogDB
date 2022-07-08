@@ -1,6 +1,5 @@
-function handleVisiblePass(event) {
+function handleVisiblePass() {
     try {
-        event.preventDefault();
         const passwordInput = document.getElementById('password') as HTMLInputElement;
         const passwordIcon = document.getElementById('passwordIcon') as HTMLImageElement;
         if (!passwordInput) throw new Error("Couldn't find password input with the id password");
@@ -20,9 +19,8 @@ function handleVisiblePass(event) {
 
 }
 
-function handleVisibleRePass(event) {
+function handleVisibleRePass() {
     try {
-        event.preventDefault();
         const passwordInput = document.getElementById('rePassword') as HTMLInputElement;
         const passwordIcon = document.getElementById('rePasswordIcon') as HTMLImageElement;
         if (!passwordInput) throw new Error("Couldn't find password input with the id rePassword");
@@ -47,10 +45,52 @@ function handleHomePage() {
     }
 }
 
-function handleSubmitForm(event) {
+async function handleRegisterForm(event) {
     try {
         event.preventDefault();
-        console.log('form submmited!');
+
+        //Users's  Form Inputs
+        const firstName = event.target.firstName.value;
+        const lastName = event.target.lastName.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const repeatedPassword = event.target.rePassword.value;
+
+        //Error Message Elements
+
+
+        // @ts-ignore
+        const { data } = await axios.post("/users/register", { firstName, lastName, email, password, repeatedPassword })
+        if (!data) throw new Error("Coulnd't receive data from axios POST '/users/register' ");
+        console.log(data);
+        const { user, error } = data;
+        if (error) handleErrorMessage(error);
+        console.log(user);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function handleErrorMessage(error: string) {
+    try {
+
+        const emailError = document.getElementById('emailError') as HTMLSpanElement;
+        const passwordError = document.getElementById('passwordError') as HTMLSpanElement;
+        const reapeatedPasswordError = document.getElementById('rePasswordError') as HTMLSpanElement;
+        emailError.innerHTML = '';
+        reapeatedPasswordError.innerHTML = '';
+        passwordError.innerHTML = '';
+
+        if(error.includes('E11000')) emailError.innerHTML = `Email address already in use.`;
+        if(error.includes('"email" must be a valid email')) emailError.innerHTML = `Email is not valid.`;
+
+        if (error.includes('"password" length must be at least 6 characters long')) passwordError.innerHTML = `Password must contain at least 6 characters.`;
+        if (error.includes('"password" length must be less than or equal to 18 characters long')) passwordError.innerHTML = `Password should contain 18 or less characters.`;
+        if (error.includes('"password" should contain at least 1 special character')) passwordError.innerHTML = `Password should contain at least 1 special character.`;
+        if (error.includes('"password" should contain at least 1 lowercase character')) passwordError.innerHTML = `Password should contain at least 1 lowercase character.`;
+        if (error.includes('"password" should contain at least 1 uppercase character')) passwordError.innerHTML = `Password should contain at least 1 uppercase character.`;
+
+        if (error.includes('"repeatedPassword" must be [ref:password]')) reapeatedPasswordError.innerHTML = `Password dosen't match!`;
     } catch (error) {
         console.error(error);
     }

@@ -91,7 +91,7 @@ body #cardHolder #contentHolder header::before {
   margin-right: 0.5em;
 }
 body #cardHolder #contentHolder #userStart {
-  margin-top: 8em;
+  margin-top: 6em;
 }
 body #cardHolder #contentHolder #userStart #userStartTitle {
   font-size: 1rem;
@@ -160,6 +160,10 @@ body #cardHolder #contentHolder #userForm form .input-holder input:focus {
 body #cardHolder #contentHolder #userForm form .input-holder label {
   cursor: pointer;
   font-size: 0.85rem;
+}
+body #cardHolder #contentHolder #userForm form .input-holder span {
+  color: red;
+  font-size: 12px;
 }
 body #cardHolder #contentHolder #userForm form .input-holder .visibleEye {
   cursor: pointer;

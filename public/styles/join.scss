@@ -104,7 +104,7 @@ body {
             }
 
             #userStart {
-                margin-top: 8em;
+                margin-top: 6em;
 
                 #userStartTitle {
                     font-size: 1rem;
@@ -184,6 +184,11 @@ body {
                         label {
                             cursor: pointer;
                             font-size: .85rem;
+                        }
+
+                        span {
+                            color: red;
+                            font-size: 12px;
                         }
                         
 

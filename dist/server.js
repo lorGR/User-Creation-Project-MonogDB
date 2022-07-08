@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 require("dotenv/config");
 const app = express_1.default();
 const port = process.env.port || 3000;
@@ -19,6 +20,7 @@ mongoose_1.default
     .catch(() => {
     console.log(`Failed Connect To DB`);
 });
+app.use('/users', userRoutes_1.default);
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}/`);
 });

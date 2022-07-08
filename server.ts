@@ -1,6 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import userRouter from './routes/userRoutes';
 import 'dotenv/config';
+
 const app: express.Application = express();
 const port = process.env.port || 3000;
 const mongoURL = process.env.MONGO_URL;
@@ -18,6 +20,7 @@ mongoose
         console.log(`Failed Connect To DB`);
     })
 
+app.use('/users', userRouter);
 app.listen(port, () => {
     console.log(`Server is running http://localhost:${port}/`);
 });
