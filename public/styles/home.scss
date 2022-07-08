@@ -1,0 +1,175 @@
+:root {
+    --bg-color: #525461;
+    --bg-color-card: #0b0c11;
+
+    --bg-color-input: #323645;
+    --bg-color-input-focused: #3D404A;
+    --border-color-input-focuesed: #235587;
+
+    --blue-primary-color: #228CE9;
+    --gray-primary-color: #747C8C;
+
+    --light-blue-primary-color: #3a97e9;
+
+    //Aco Pallate:
+    --swatch1: #0b0c11;
+    --swatch2: #1b2a4a;
+    --swatch3: #595b63;
+    --swatch4: #0449e9;
+    --swatch5: #ededee;
+    --swatch6: #9c9da2;
+    --swatch7: #1a429c;
+    --swatch8: #5195ea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+}
+
+body {
+    color: var(--gray-primary-color);
+    display: grid;
+    place-items: center;
+    background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+
+    #cardHolder {
+        display: flex;
+        width: 80%;
+        height: 80%;
+        background-color: var(--bg-color-card);
+        border-radius: 1.5em;
+
+        #contentHolder {
+            width: 100%;
+            padding: 3em;
+
+            header {
+                display: flex;
+                align-items: center;
+
+                nav {
+                    width: 100%;
+
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-weight: 600;
+                        font-size: 1rem;
+
+                        li {
+                            cursor: pointer;
+
+                            a {
+                                text-decoration: none;
+                                color: var(--gray-primary-color);
+                            }
+                        }
+
+                        .active {
+                            a {
+                                color: #ffffff;
+                            }
+
+                            border-bottom: 2px solid var(--light-blue-primary-color);
+                        }
+
+                        #logo {
+                            h3 {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #mainContent {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 3em 2em 1.5em 2em;
+                gap: 2em;
+
+                h1 {
+                    font-size: 3.5rem;
+                    text-decoration: underline;
+                    text-decoration-color: var(--blue-primary-color);
+                }
+
+                .subtitle {
+                    font-weight: 700;
+                    word-spacing: .45em;
+                }
+
+                .points {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                    p {
+                        mark {
+                            color: #ffffff;
+                            background-color: var(--blue-primary-color);
+                        }
+                    }
+                    p::before {
+                        content: '';
+                        display: inline-block;
+                        width: 1.2em;
+                        height: 1.2em;
+                        background-color: var(--blue-primary-color);
+                        border-radius: 50%;
+                        margin: .5em .25em 0 0;
+                        transform: translateY(20%);
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                    background-color: var(--blue-primary-color);
+                    border-radius: 2em;
+                    padding: .75em;
+                    transition: background-color 0.25s ease-in-out;
+                }
+                button:hover {
+                    background-color: var(--light-blue-primary-color);
+                }
+            }
+
+
+            header::before {
+                content: '';
+                display: inline-block;
+                width: 1.75rem;
+                height: 1.75rem;
+                background-color: var(--blue-primary-color);
+                border-radius: 50%;
+                transform: translate(0%, 0%);
+                margin-right: .5em;
+            }
+
+
+        }
+
+        #imgHolder {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -63,14 +63,19 @@ body #cardHolder #contentHolder header nav ul li {
   cursor: pointer;
 }
 body #cardHolder #contentHolder header nav ul li a {
+  padding: 0.5em 0;
   text-decoration: none;
   color: var(--gray-primary-color);
+  transition: color 0.35s ease-in-out;
+}
+body #cardHolder #contentHolder header nav ul li a:hover {
+  color: var(--blue-primary-color);
 }
 body #cardHolder #contentHolder header nav ul .active {
-  border-bottom: 2px solid #bcbcbd;
+  border-bottom: 2px solid var(--light-blue-primary-color);
 }
 body #cardHolder #contentHolder header nav ul .active a {
-  color: #bcbcbd;
+  color: #ffffff;
 }
 body #cardHolder #contentHolder header nav ul #logo h3 {
   color: #ffffff;

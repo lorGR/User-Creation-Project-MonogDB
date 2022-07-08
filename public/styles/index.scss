@@ -67,15 +67,21 @@ body {
                         li {
                             cursor: pointer;
                             a {
+                                padding: .5em 0;
                                 text-decoration: none;
                                 color: var(--gray-primary-color);
+                                transition: color .35s ease-in-out;
                             }
+                            a:hover {
+                                color: var(--blue-primary-color);
+                            }
+                            
                         }
                         .active {
                             a {
-                                color: #bcbcbd;
+                                color: #ffffff;
                             }
-                            border-bottom: 2px solid #bcbcbd;
+                            border-bottom: 2px solid var(--light-blue-primary-color);
                         }
                         #logo {
                             h3 {
