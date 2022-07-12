@@ -33,13 +33,13 @@ export default UserModel;
 export const UserValidation = Joi.object({
     firstName:
         Joi.string()
-            .alphanum()
             .min(2)
+            .alphanum()
             .required(),
     lastName:
         Joi.string()
-            .alphanum()
             .min(2)
+            .alphanum()
             .required(),
     email:
         Joi.string()

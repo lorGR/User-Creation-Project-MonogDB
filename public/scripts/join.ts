@@ -48,8 +48,7 @@ function handleHomePage() {
 async function handleRegisterForm(event) {
     try {
         event.preventDefault();
-
-        //Users's  Form Inputs
+        //Users's  Form Input
         const firstName = event.target.firstName.value;
         const lastName = event.target.lastName.value;
         const email = event.target.email.value;
@@ -66,6 +65,7 @@ async function handleRegisterForm(event) {
         const { user, error } = data;
         if (error) handleErrorMessage(error);
         console.log(user);
+        if (user) window.location.href = `./login.html`;
     } catch (error) {
         console.error(error);
     }
@@ -73,16 +73,22 @@ async function handleRegisterForm(event) {
 
 function handleErrorMessage(error: string) {
     try {
-
+        const firstNameError = document.getElementById('firstNameError') as HTMLSpanElement;
+        const lastNameError = document.getElementById('lastNameError') as HTMLSpanElement;
         const emailError = document.getElementById('emailError') as HTMLSpanElement;
         const passwordError = document.getElementById('passwordError') as HTMLSpanElement;
         const reapeatedPasswordError = document.getElementById('rePasswordError') as HTMLSpanElement;
+        firstNameError.innerHTML = '';
+        lastNameError.innerHTML = '';
         emailError.innerHTML = '';
         reapeatedPasswordError.innerHTML = '';
         passwordError.innerHTML = '';
 
-        if(error.includes('E11000')) emailError.innerHTML = `Email address already in use.`;
-        if(error.includes('"email" must be a valid email')) emailError.innerHTML = `Email is not valid.`;
+        if (error.includes('"firstName" length must be at least 2 characters long')) firstNameError.innerHTML = `First name is too short.`;
+        if (error.includes('"lastName" length must be at least 2 characters long')) lastNameError.innerHTML = `Last name is too short.`
+
+        if (error.includes('E11000')) emailError.innerHTML = `Email address already in use.`;
+        if (error.includes('"email" must be a valid email')) emailError.innerHTML = `Email is not valid.`;
 
         if (error.includes('"password" length must be at least 6 characters long')) passwordError.innerHTML = `Password must contain at least 6 characters.`;
         if (error.includes('"password" length must be less than or equal to 18 characters long')) passwordError.innerHTML = `Password should contain 18 or less characters.`;

@@ -109,6 +109,8 @@ function handleRegisterForm(event) {
                     if (error)
                         handleErrorMessage(error);
                     console.log(user);
+                    if (user)
+                        window.location.href = "./login.html";
                     return [3 /*break*/, 3];
                 case 2:
                     error_1 = _a.sent();
@@ -121,12 +123,20 @@ function handleRegisterForm(event) {
 }
 function handleErrorMessage(error) {
     try {
+        var firstNameError = document.getElementById('firstNameError');
+        var lastNameError = document.getElementById('lastNameError');
         var emailError = document.getElementById('emailError');
         var passwordError = document.getElementById('passwordError');
         var reapeatedPasswordError = document.getElementById('rePasswordError');
+        firstNameError.innerHTML = '';
+        lastNameError.innerHTML = '';
         emailError.innerHTML = '';
         reapeatedPasswordError.innerHTML = '';
         passwordError.innerHTML = '';
+        if (error.includes('"firstName" length must be at least 2 characters long'))
+            firstNameError.innerHTML = "First name is too short.";
+        if (error.includes('"lastName" length must be at least 2 characters long'))
+            lastNameError.innerHTML = "Last name is too short.";
         if (error.includes('E11000'))
             emailError.innerHTML = "Email address already in use.";
         if (error.includes('"email" must be a valid email'))

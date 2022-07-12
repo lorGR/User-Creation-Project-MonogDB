@@ -31,12 +31,12 @@ var UserModel = mongoose_1["default"].model('users', UserSchema);
 exports["default"] = UserModel;
 exports.UserValidation = joi_1["default"].object({
     firstName: joi_1["default"].string()
-        .alphanum()
         .min(2)
+        .alphanum()
         .required(),
     lastName: joi_1["default"].string()
-        .alphanum()
         .min(2)
+        .alphanum()
         .required(),
     email: joi_1["default"].string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })

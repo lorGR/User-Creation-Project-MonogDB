@@ -36,11 +36,13 @@
                     <div class="first-last-name">
                         <div class="input-holder">
                             <label for="firstName">First name</label>
+                            <span id="firstNameError"></span>
                             <input type="text" name="firstName" id="firstName">
                             <img class="userIdIcon" src="../assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
                         </div>
                         <div class="input-holder userIdIcon">
                             <label for="lastName">Last name</label>
+                            <span id="lastNameError"></span>
                             <input type="text" name="lastName" id="lastName">
                             <img class="userIdIcon" src="../assets/svgs/icons/id-card-svgrepo-com.svg" alt="idIcon">
                         </div>
@@ -60,7 +62,7 @@
                     <div class="input-holder">
                         <label for="rePassword">Repeat Password</label>
                         <span id="rePasswordError"></span>
-                        <input type="password" name="rePassword" id="rePassword">
+                        <input type="password" name="repeatedPassword" id="rePassword">
                         <button class="visibleEye" onclick="handleVisibleRePass(event)"><img id="rePasswordIcon" src="../assets/svgs/icons/eye-invisible-svgrepo-com.svg" alt="visibleEye"></button>
                     </div>
                     <button id="submitRegister" type="submit">Create account</button>
