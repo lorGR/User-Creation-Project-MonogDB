@@ -1,26 +1,29 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import userRouter from './routes/userRoutes';
-import 'dotenv/config';
+require("dotenv").config();
 
-const app: express.Application = express();
+const app = express();
 const port = process.env.port || 3000;
-const mongoURL = process.env.MONGO_URL;
 
+const mongodb_uri = process.env.MONGODB_URI;
 
-app.use(express.json());
+console.log(mongodb_uri);
+
+if(mongodb_uri) {
+    mongoose
+        .connect(mongodb_uri)
+        .then(() => {
+            console.log("Connected To DB");
+        })
+        .catch (() => {
+            console.log("Couldn't Connect To DB");
+        })
+} else {
+    console.log("No mongodb_uri");
+}
+
 app.use(express.static('public'));
 
-mongoose
-    .connect(mongoURL)
-    .then(() => {
-        console.log(`Connected To DB`);
-    })
-    .catch(() => {
-        console.log(`Failed Connect To DB`);
-    })
-
-app.use('/users', userRouter);
 app.listen(port, () => {
-    console.log(`Server is running http://localhost:${port}/`);
-});
+    console.log("Server is running");
+})
